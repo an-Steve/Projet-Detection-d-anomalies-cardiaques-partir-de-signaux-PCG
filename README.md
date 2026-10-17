@@ -15,6 +15,7 @@ suffisamment léger pour tourner sur une cible embarquée à faibles ressources
 (microcontrôleur de type ARM Cortex-M, ESP32, Raspberry Pi Pico ou Raspberry Pi).
 
 ### Données
+
 Base **PhysioNet/CinC Challenge 2016** (Clifford et al., *Classification of normal/abnormal
 heart sound recordings*, Computing in Cardiology 2016).
 
