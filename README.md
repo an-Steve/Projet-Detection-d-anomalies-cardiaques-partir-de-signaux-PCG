@@ -94,6 +94,6 @@ Les organisateurs du challenge obtiennent aussi un score faible (0,59) avec ce d
 - Une seule graine par résultat. Les bases c (31 enregistrements) et d (55) donnent des scores très instables.
 - Reste à faire : modèle TC-ResNet-PCG, comparaison de modèles, compression, déploiement sur la carte.
 
-  ### Livrables
+  ## Livrables
 Papier scientifique (format IMRaD), code source documenté et reproductible,
 présentation orale avec démonstration.
