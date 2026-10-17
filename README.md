@@ -1,4 +1,5 @@
 # Classification de sons cardiaques (PCG) avec un petit réseau
+> Formation : Master 2 Ingénierie en Intelligence Artificielle - Université Paris 8  | Module : Optimisation des modèles
 
 ## Présentation du projet
 
