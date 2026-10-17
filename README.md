@@ -1,5 +1,13 @@
 # Classification de sons cardiaques (PCG) avec un petit réseau
 > Formation : Master 2 Ingénierie en Intelligence Artificielle - Université Paris 8  | Module : Optimisation des modèles
+>
+> ## Membres du groupe
+
+| Nom | Prénom |
+| --- | ------ |
+| ANTON NELCON     |    Steve    |
+| MOULAI HACENE   |     RANIA   |
+| LIMACHE |Adrien|
 
 ## Présentation du projet
 
@@ -21,7 +29,7 @@ heart sound recordings*, Computing in Cardiology 2016).
 
 **Lien du téléchargement** : https://physionet.org/content/challenge-2016/1.0.0/
 
-### Objectifs
+## Objectifs
 1. **Modèle léger dès la conception** : choisir une architecture économe en paramètres
    et en calcul, et optimiser le prétraitement (filtrage, fenêtrage, MFCC) pour limiter
    le coût en amont.
@@ -29,30 +37,13 @@ heart sound recordings*, Computing in Cardiology 2016).
    (quantification, pruning, distillation, factorisation à faible rang), mesurer leur impact
    sur la précision, la mémoire et la latence, puis comparer aux travaux de l'état de l'art.
 
-### Pipeline
+## Pipeline
 Données PhysioNet → Prétraitement et segmentation → Modèle léger (baseline)
 → Compression → Déploiement embarqué
 
-### Métrique
+## Métrique
 Modified Accuracy : **MAcc = (sensibilité + spécificité) / 2**, métrique officielle du
 challenge. Le meilleur score du challenge avoisine 0,86.
-
-### Contraintes de déploiement visées
-| Contrainte | Ordre de grandeur |
-| --- | --- |
-| RAM | quelques dizaines de Ko à quelques Mo |
-| Stockage du modèle (Flash) | quelques centaines de Ko à quelques Mo |
-| Latence par segment | temps réel ou quasi temps réel |
-| Énergie | compatible batterie (< 1 W) |
-
-
-## Membres du groupe
-
-| Nom | Prénom |
-| --- | ------ |
-| ANTON NELCON     |    Steve    |
-| MOULAI HACENE   |     RANIA   |
-| LIMACHE |Adrien|
 
 ## Utilisation
 
