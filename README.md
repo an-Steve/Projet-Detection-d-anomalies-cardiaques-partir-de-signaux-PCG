@@ -3,6 +3,14 @@
 Projet de M2 IIA, Optimisation des modèles. Base : PhysioNet/CinC Challenge 2016 (3 240 enregistrements, 6 bases de a à f).
 Objectif : classer un enregistrement en « normal » ou « anormal » avec un réseau assez petit pour un microcontrôleur.
 
+## Membres du groupe
+
+| Nom | Prénom |
+| --- | ------ |
+| ANTON NELCON     |    Steve    |
+| MOULAI HACENE   |     RANIA   |
+| LIMACHE |Adrien|
+
 ## Utilisation
 
 ```bash
