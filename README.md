@@ -5,9 +5,10 @@
  
  ## Membres du groupe
  
-| Membres du groupe |
-| --- |
-| ANTON NELCON Steve<br>MOULAI HACENE Rania<br>LIMACHE Adrien |
+| Membres du groupe | | |
+| --- | --- | --- |
+| ANTON NELCON Steve | MOULAI HACENE Rania | LIMACHE Adrien |
+
 ## Présentation du projet
 
 Les maladies cardiovasculaires sont la première cause de mortalité dans le monde.
