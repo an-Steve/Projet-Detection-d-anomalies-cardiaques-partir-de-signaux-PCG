@@ -42,9 +42,7 @@ challenge. Le meilleur score du challenge avoisine 0,86.
 | Latence par segment | temps réel ou quasi temps réel |
 | Énergie | compatible batterie (< 1 W) |
 
-### Livrables
-Papier scientifique (format IMRaD), code source documenté et reproductible,
-présentation orale avec démonstration.
+
 ## Membres du groupe
 
 | Nom | Prénom |
@@ -101,3 +99,7 @@ Les organisateurs du challenge obtiennent aussi un score faible (0,59) avec ce d
 - 3 240 enregistrements ici, contre 3 153 annoncés dans le sujet (écart non expliqué).
 - Une seule graine par résultat. Les bases c (31 enregistrements) et d (55) donnent des scores très instables.
 - Reste à faire : modèle TC-ResNet-PCG, comparaison de modèles, compression, déploiement sur la carte.
+
+  ### Livrables
+Papier scientifique (format IMRaD), code source documenté et reproductible,
+présentation orale avec démonstration.
