@@ -14,10 +14,12 @@ Ce projet vise à classer des enregistrements PCG en **normal / anormal** avec u
 suffisamment léger pour tourner sur une cible embarquée à faibles ressources
 (microcontrôleur de type ARM Cortex-M, ESP32, Raspberry Pi Pico ou Raspberry Pi).
 
-### Données
+## Données
 
 Base **PhysioNet/CinC Challenge 2016** (Clifford et al., *Classification of normal/abnormal
 heart sound recordings*, Computing in Cardiology 2016).
+
+**Lien du téléchargement** : https://physionet.org/content/challenge-2016/1.0.0/
 
 ### Objectifs
 1. **Modèle léger dès la conception** : choisir une architecture économe en paramètres
