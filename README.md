@@ -5,9 +5,16 @@
  
  ## Membres du groupe
  
-| Membres du groupe | | |
-| --- | --- | --- |
-| ANTON NELCON Steve | MOULAI HACENE Rania | LIMACHE Adrien |
+<table>
+  <tr>
+    <th colspan="3" align="center">Membres du groupe</th>
+  </tr>
+  <tr>
+    <td align="center">ANTON NELCON Steve</td>
+    <td align="center">MOULAI HACENE Rania</td>
+    <td align="center">LIMACHE Adrien</td>
+  </tr>
+</table>
 
 ## Présentation du projet
 
