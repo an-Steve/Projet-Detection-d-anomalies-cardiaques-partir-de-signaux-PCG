@@ -10,8 +10,7 @@ nécessite seulement un capteur simple (microphone ou piézoélectrique). Il est
 adapté à un dispositif portable et autonome pouvant servir de premier filtre avant
 orientation vers un cardiologue, notamment dans les zones à ressources médicales limitées.
 
-Ce projet, réalisé dans le cadre du module **Optimisation des modèles** (Master 2 IIA),
-vise à classer des enregistrements PCG en **normal / anormal** avec un modèle
+Ce projet vise à classer des enregistrements PCG en **normal / anormal** avec un modèle
 suffisamment léger pour tourner sur une cible embarquée à faibles ressources
 (microcontrôleur de type ARM Cortex-M, ESP32, Raspberry Pi Pico ou Raspberry Pi).
 
