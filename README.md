@@ -1,8 +1,50 @@
 # Classification de sons cardiaques (PCG) avec un petit réseau
 
-Projet de M2 IIA, Optimisation des modèles. Base : PhysioNet/CinC Challenge 2016 (3 240 enregistrements, 6 bases de a à f).
-Objectif : classer un enregistrement en « normal » ou « anormal » avec un réseau assez petit pour un microcontrôleur.
+## Présentation du projet
 
+Les maladies cardiovasculaires sont la première cause de mortalité dans le monde.
+Le phonocardiogramme (PCG) enregistre les vibrations sonores produites par l'activité
+mécanique du cœur : c'est un moyen de dépistage non invasif, très peu coûteux, qui
+nécessite seulement un capteur simple (microphone ou piézoélectrique). Il est donc bien
+adapté à un dispositif portable et autonome pouvant servir de premier filtre avant
+orientation vers un cardiologue, notamment dans les zones à ressources médicales limitées.
+
+Ce projet, réalisé dans le cadre du module **Optimisation des modèles** (Master 2 IIA),
+vise à classer des enregistrements PCG en **normal / anormal** avec un modèle
+suffisamment léger pour tourner sur une cible embarquée à faibles ressources
+(microcontrôleur de type ARM Cortex-M, ESP32, Raspberry Pi Pico ou Raspberry Pi).
+
+### Données
+Base **PhysioNet/CinC Challenge 2016** (Clifford et al., *Classification of normal/abnormal
+heart sound recordings*, Computing in Cardiology 2016).
+
+### Objectifs
+1. **Modèle léger dès la conception** : choisir une architecture économe en paramètres
+   et en calcul, et optimiser le prétraitement (filtrage, fenêtrage, MFCC) pour limiter
+   le coût en amont.
+2. **Compression et déploiement embarqué** : appliquer des techniques de compression
+   (quantification, pruning, distillation, factorisation à faible rang), mesurer leur impact
+   sur la précision, la mémoire et la latence, puis comparer aux travaux de l'état de l'art.
+
+### Pipeline
+Données PhysioNet → Prétraitement et segmentation → Modèle léger (baseline)
+→ Compression → Déploiement embarqué
+
+### Métrique
+Modified Accuracy : **MAcc = (sensibilité + spécificité) / 2**, métrique officielle du
+challenge. Le meilleur score du challenge avoisine 0,86.
+
+### Contraintes de déploiement visées
+| Contrainte | Ordre de grandeur |
+| --- | --- |
+| RAM | quelques dizaines de Ko à quelques Mo |
+| Stockage du modèle (Flash) | quelques centaines de Ko à quelques Mo |
+| Latence par segment | temps réel ou quasi temps réel |
+| Énergie | compatible batterie (< 1 W) |
+
+### Livrables
+Papier scientifique (format IMRaD), code source documenté et reproductible,
+présentation orale avec démonstration.
 ## Membres du groupe
 
 | Nom | Prénom |
