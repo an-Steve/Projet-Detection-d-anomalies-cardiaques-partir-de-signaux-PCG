@@ -1,0 +1,4 @@
+classification-of-heart-sound*/
+__pycache__/
+.pytest_cache/
+data/
