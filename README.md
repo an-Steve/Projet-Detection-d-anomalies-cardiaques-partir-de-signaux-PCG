@@ -76,7 +76,7 @@ Chaque exécution ajoute une ligne à `results.csv`.
 | `test_projet.py` | tests |
 | `DECISIONS.docx` | les choix faits et leurs raisons |
 
-## Ce qui a été fait
+## Ce qui a été fait 
 
 1. **Prétraitement** : 1 000 Hz, filtre 20-400 Hz (bande des bruits du coeur), fenêtres de 2,5 s, 13 MFCC.
    J'ai comparé avec des fenêtres de 3 s et 5 s (`results_fenetres.csv`) : 2,5 s donne un résultat équivalent et coûte moins cher, je l'ai gardé.
@@ -101,6 +101,6 @@ Les organisateurs du challenge obtiennent aussi un score faible (0,59) avec ce d
 - Une seule graine par résultat. Les bases c (31 enregistrements) et d (55) donnent des scores très instables.
 - Reste à faire : modèle TC-ResNet-PCG, comparaison de modèles, compression, déploiement sur la carte.
 
-  ## Livrables
+## Livrables
 Papier scientifique (format IMRaD), code source documenté et reproductible,
 présentation orale avec démonstration.
