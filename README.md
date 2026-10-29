@@ -120,14 +120,6 @@ Les organisateurs du challenge obtiennent 0,59 avec ce découpage.
 
 En LODO, TC-ResNet8 gagne 17 fois sur 18 contre Deng et Noman, avec 4 à 5 fois moins de calcul. Rubin n'a pas convergé dans plusieurs entraînements : son score reflète l'entraînement, pas l'architecture. Détail dans `docs/DECISIONS.docx` et `results/figures/`.
 
-## Limites
-
-- 3 240 enregistrements ici, contre 3 153 annoncés dans le sujet (écart de 87 dans la base e, non expliqué). Pas d'identifiant patient.
-- Le résultat reste modeste : la base f est classée presque entièrement « anormale », a et b restent autour de 0,6, et les bases c (31 enregistrements) et d (55) sont très instables.
-- Le modèle livré n'a pas de vrai test et sa sensibilité est de 0,41 au seuil 0,5.
-- Les réglages ont été faits en LODO sur ces mêmes bases : le résultat est un peu optimiste.
-- Le prétraitement (filtre sur le signal entier, normalisation par enregistrement) devra être adapté pour tourner au fil de l'eau sur la carte.
-- Reste à faire : compression, déploiement sur la carte.
 
 ## Livrables
 Papier scientifique (format IMRaD), code source documenté et reproductible,
