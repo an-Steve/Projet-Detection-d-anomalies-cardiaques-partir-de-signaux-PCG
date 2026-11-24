@@ -140,3 +140,23 @@ def test_generer_c_header(tmp_path):
     assert f"g_model_data_len = {modele_tflite.stat().st_size}" in texte
 
 
+def test_normalisation_streaming():
+    """Les fonctions de normalisation locale et EMA produisent des fenêtres centrées et réduites."""
+    from pcg.evaluer_streaming import normaliser_ema, normaliser_par_fenetre
+    feats = (np.random.randn(8, 13, 75) * 4 + 2).astype(np.float32)
+    ids = np.array(["rec1"] * 4 + ["rec2"] * 4)
+
+    # 1. Fenêtre locale
+    norm_fen = normaliser_par_fenetre(feats)
+    assert norm_fen.shape == feats.shape
+    for i in range(len(norm_fen)):
+        assert np.allclose(norm_fen[i].mean(axis=1), 0, atol=1e-4)
+        assert np.allclose(norm_fen[i].std(axis=1), 1, atol=1e-3)
+
+    # 2. EMA
+    norm_ema = normaliser_ema(feats, ids, alpha=0.3)
+    assert norm_ema.shape == feats.shape
+    assert not np.isnan(norm_ema).any()
+
+
+

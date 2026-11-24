@@ -72,6 +72,22 @@ static inline bool is_abnormal(float probability) {
     return probability >= MODEL_DECISION_THRESHOLD;
 }
 
+/**
+ * Normalise en direct un vecteur MFCC (13 coefficients) via une moyenne glissante exponentielle (EMA).
+ * Ne consomme que 26 floats de RAM (104 octets) pour mu_ema et var_ema.
+ */
+static inline void normalize_mfcc_streaming_ema(const float* raw_mfcc, float* out_norm, float* mu_ema, float* var_ema, float alpha) {
+    for (int c = 0; c < MODEL_INPUT_CHANNELS; ++c) {
+        float val = raw_mfcc[c];
+        mu_ema[c] = alpha * val + (1.0f - alpha) * mu_ema[c];
+        float diff = val - mu_ema[c];
+        var_ema[c] = alpha * (diff * diff) + (1.0f - alpha) * var_ema[c];
+        float std = sqrtf(var_ema[c] + 1e-8f);
+        float norm_l2 = diff / std;
+        out_norm[c] = (norm_l2 - g_mfcc_mu[c]) / g_mfcc_sd[c];
+    }
+}
+
 /* ==================================================================== */
 /* Tableau binaire du modèle TFLite (aligné sur 16 octets pour Cortex-M) */
 /* ==================================================================== */
