@@ -3,3 +3,9 @@ __pycache__/
 .pytest_cache/
 data/
 ~$*
+.venv/
+bug.txt
+note.txt
+github.txt
+models/tflite/
+

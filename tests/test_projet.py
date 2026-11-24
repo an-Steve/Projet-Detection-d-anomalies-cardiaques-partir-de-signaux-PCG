@@ -109,3 +109,34 @@ def test_sauvegarde_et_prediction(tmp_path, monkeypatch):
     attendu = probas(rec, torch.from_numpy(X).float().to(train.DEV)).mean()
     wav = next(BASE.glob("training-a")) / "a0001.wav"
     assert np.isclose(predire.predire(wav, tmp_path / "models" / "meilleur_modele.pt"), attendu, atol=1e-5)
+
+
+def test_export_onnx(tmp_path):
+    """L'export ONNX produit un graphe conforme et des sorties identiques à PyTorch (< 1e-5)."""
+    from pathlib import Path
+    from pcg.export_onnx import exporter_onnx, valider_onnx
+    modele_pt = Path("models/meilleur_modele.pt")
+    sortie_onnx = tmp_path / "test.onnx"
+    exporter_onnx(modele_pt, sortie_onnx)
+    assert sortie_onnx.exists()
+    valide, max_diff = valider_onnx(modele_pt, sortie_onnx, nb_echantillons=30)
+    assert valide and max_diff < 1e-5
+
+
+def test_generer_c_header(tmp_path):
+    """La conversion en en-tête C produit un fichier model_data.h conforme et aligné."""
+    from pathlib import Path
+    from pcg.generer_c_header import generer_c_header
+    modele_tflite = Path("models/meilleur_modele_qat_quant.tflite")
+    if not modele_tflite.exists():
+        modele_tflite = Path("models/meilleur_modele_quant.tflite")
+    sortie_h = tmp_path / "model_data.h"
+    generer_c_header(modele_tflite=modele_tflite, fichier_sortie=sortie_h)
+    assert sortie_h.exists()
+    texte = sortie_h.read_text(encoding="utf-8")
+    assert "g_model_data" in texte
+    assert "MODEL_INPUT_CHANNELS" in texte
+    assert "quantize_input" in texte
+    assert f"g_model_data_len = {modele_tflite.stat().st_size}" in texte
+
+
